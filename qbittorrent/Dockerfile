@@ -15,7 +15,9 @@ RUN \
     && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable \
     && apt-get update \
     && apt-get install -y \
-       qbittorrent-nox=4.1.9.99~201911020617-6737-5d98721~ubuntu18.04.1
+       qbittorrent-nox=4.1.9.99~201911020617-6737-5d98721~ubuntu18.04.1 \
+    && apt-get remove --auto-remove software-properties-common \
+    && apt-get purge --auto-remove software-properties-common
 
 # Copy root filesystem
 COPY rootfs /

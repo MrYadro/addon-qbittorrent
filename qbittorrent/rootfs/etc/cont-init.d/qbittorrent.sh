@@ -7,8 +7,8 @@ readonly conf=/root/.config/qBittorrent/qBittorrent.conf
 
 if ! bashio::fs.file_exists "${conf}"; then
     bashio::log.info 'First run! Initializing configuration files...'
-    mkdir -p /root/.config/qBittorrent/
-    cp /defaults/qBittorrent.conf $conf
+    mkdir -p "$(dirname "${conf}")"
+    cp "/defaults/qBittorrent.conf" "$conf"
 
     if ! bashio::config.has_value "save_path"; then
         bashio::log.fatal
@@ -20,8 +20,8 @@ if ! bashio::fs.file_exists "${conf}"; then
         bashio::log.fatal
         bashio::exit.nok
     fi
-
-    save_path=$(bashio::config 'save_path')
-    bashio::log.info "Editing Save Path"
-    sed -i -e '/Downloads\\SavePath=/ s/=.*/=$save_path/' "$conf"
 fi
+
+save_path=$(bashio::config 'save_path')
+bashio::log.info "Editing Save Path"
+sed -i -e '/Downloads\\SavePath=/ s/=.*/=$save_path/' "$conf"
