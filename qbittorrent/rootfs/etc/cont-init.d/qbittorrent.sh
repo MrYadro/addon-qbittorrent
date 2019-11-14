@@ -7,6 +7,7 @@ readonly conf=/root/.config/qBittorrent/qBittorrent.conf
 
 if ! bashio::fs.file_exists "${conf}"; then
     bashio::log.info 'First run! Initializing configuration files...'
+    mkdir -p /root/.config/qBittorrent/
     cp /defaults/qBittorrent.conf $conf
 
     if ! bashio::config.has_value "save_path"; then
