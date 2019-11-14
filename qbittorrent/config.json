@@ -1,0 +1,28 @@
+{
+    "name": "qBittorrent",
+    "version": "1",
+    "slug": "qbittorrent",
+    "description": "A BitTorrent client in Qt",
+    "arch": [
+        "aarch64",
+            "amd64",
+            "armv7",
+            "i386"
+    ],
+    "startup": "services",
+    "map":[
+        "share:rw"
+    ],
+    "boot": "auto",
+    "options": {
+        "save_path": "/share/Downloads"
+    },
+    "schema": {
+        "save_path": "str"
+    },
+    "ports": {
+        "8080/tcp": 8080,
+        "6881/tcp": 6881
+    }
+  }
+  
