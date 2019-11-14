@@ -15,7 +15,7 @@
     ],
     "boot": "auto",
     "options": {
-        "save_path": "/share/Downloads"
+        "save_path": "/share/Downloads/"
     },
     "schema": {
         "save_path": "str"
