@@ -24,4 +24,4 @@ fi
 
 save_path=$(bashio::config 'save_path')
 bashio::log.info "Editing Save Path"
-sed -i -e '/Downloads\\SavePath=/ s/=.*/=${save_path}/' "$conf"
+sed -i -e '/Downloads\\SavePath=/ s/=.*/='$save_path'/' "$conf"
