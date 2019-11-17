@@ -10,6 +10,7 @@
             "i386"
     ],
     "startup": "services",
+    "url": "https://github.com/MrYadro/addon-qbittorrent",
     "map":[
         "share:rw",
         "config:rw"

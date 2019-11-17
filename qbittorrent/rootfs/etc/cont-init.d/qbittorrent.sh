@@ -5,21 +5,15 @@
 # ==============================================================================
 readonly conf=/config/qBittorrent/qBittorrent.conf
 
-if ! bashio::fs.file_exists "${conf}"; then
-    bashio::log.info 'First run! Initializing configuration files...'
-    mkdir -p "$(dirname "${conf}")"
-    cp "/defaults/qBittorrent.conf" "$conf"
-
-    if ! bashio::config.has_value "save_path"; then
-        bashio::log.fatal
-        bashio::log.fatal "Add-on configuration is incomplete!"
-        bashio::log.fatal
-        bashio::log.fatal "qBittorrent requires a claim code on the first run!"
-        bashio::log.fatal
-        bashio::log.fatal "Please check the installation manual of the add-on."
-        bashio::log.fatal
-        bashio::exit.nok
-    fi
+if ! bashio::config.has_value "save_path"; then
+    bashio::log.fatal
+    bashio::log.fatal "Add-on configuration is incomplete!"
+    bashio::log.fatal
+    bashio::log.fatal "qBittorrent requires a claim code on the first run!"
+    bashio::log.fatal
+    bashio::log.fatal "Please check the installation manual of the add-on."
+    bashio::log.fatal
+    bashio::exit.nok
 fi
 
 save_path=$(bashio::config 'save_path')
