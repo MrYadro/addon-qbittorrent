@@ -11,7 +11,8 @@
     ],
     "startup": "services",
     "map":[
-        "share:rw"
+        "share:rw",
+        "config:rw"
     ],
     "boot": "auto",
     "options": {

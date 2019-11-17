@@ -3,7 +3,7 @@
 # Hass.io Add-ons: qBittorrent
 # Configures qBittorrent before running
 # ==============================================================================
-readonly conf=/root/.config/qBittorrent/qBittorrent.conf
+readonly conf=/config/qBittorrent/qBittorrent.conf
 
 if ! bashio::fs.file_exists "${conf}"; then
     bashio::log.info 'First run! Initializing configuration files...'
@@ -24,4 +24,4 @@ fi
 
 save_path=$(bashio::config 'save_path')
 bashio::log.info "Editing Save Path"
-sed -i -e '/Downloads\\SavePath=/ s/=.*/='$save_path'/' "$conf"
+sed -i -e '/Downloads\\SavePath=/ s/=.*/='${save_path}'/' $conf
