@@ -4,6 +4,7 @@
 # Configures qBittorrent before running
 # ==============================================================================
 readonly conf=/config/qBittorrent/config/qBittorrent.conf
+readonly defconf=/defaults/qBittorrent.conf
 
 # if ! bashio::config.has_value "save_path"; then
 #     bashio::log.fatal
@@ -22,7 +23,7 @@ if ! bashio::fs.directory_exists "$(dirname "${conf}")"; then
         || bashio::exit.nok "Failed to create qBittorrent configuration directory"
 fi
 
-cp /defaults/qBittorent.conf $conf
+cp $defconf $conf
 
 # save_path=$(bashio::config 'save_path')
 # bashio::log.info "Editing Save Path"
