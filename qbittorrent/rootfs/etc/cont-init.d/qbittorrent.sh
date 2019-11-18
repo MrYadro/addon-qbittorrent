@@ -3,7 +3,7 @@
 # Hass.io Add-ons: qBittorrent
 # Configures qBittorrent before running
 # ==============================================================================
-# readonly conf=/config/qBittorrent/qBittorrent.conf
+readonly conf=/config/qBittorrent/config/qBittorrent.conf
 
 # if ! bashio::config.has_value "save_path"; then
 #     bashio::log.fatal
@@ -15,6 +15,13 @@
 #     bashio::log.fatal
 #     bashio::exit.nok
 # fi
+
+# Ensure configuration exists
+if ! bashio::fs.directory_exists "$(dirname "${conf}")"; then
+    mkdir -p "$(dirname "${prefs}")" \
+        || bashio::exit.nok "Failed to create node-red configuration directory"
+    cp /defaults/qBittorent.conf $conf
+fi
 
 # save_path=$(bashio::config 'save_path')
 # bashio::log.info "Editing Save Path"
