@@ -16,12 +16,13 @@ readonly conf=/config/qBittorrent/config/qBittorrent.conf
 #     bashio::exit.nok
 # fi
 
-# Ensure configuration exists
+# Ensure configuration folder exists
 if ! bashio::fs.directory_exists "$(dirname "${conf}")"; then
     mkdir -p "$(dirname "${conf}")" \
-        || bashio::exit.nok "Failed to create node-red configuration directory"
-    cp /defaults/qBittorent.conf $conf
+        || bashio::exit.nok "Failed to create qBittorrent configuration directory"
 fi
+
+cp /defaults/qBittorent.conf $conf
 
 # save_path=$(bashio::config 'save_path')
 # bashio::log.info "Editing Save Path"
