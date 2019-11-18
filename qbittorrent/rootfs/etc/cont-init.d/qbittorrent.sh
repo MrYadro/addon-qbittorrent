@@ -21,10 +21,10 @@ readonly defconf=/defaults/qBittorrent.conf
 if ! bashio::fs.directory_exists "$(dirname "${conf}")"; then
     mkdir -p "$(dirname "${conf}")" \
         || bashio::exit.nok "Failed to create qBittorrent configuration directory"
+    cp $defconf $conf
 fi
 
-cp $defconf $conf
-
-# save_path=$(bashio::config 'save_path')
-# bashio::log.info "Editing Save Path"
-# sed -i -e '/Downloads\\SavePath=/ s/=.*/=${save_path}/' $conf
+save_path=$(bashio::config 'save_path')
+save_path_param="Downloads\SavePath"
+bashio::log.info "Editing Save Path"
+sed -i "s/^\($save_path_param\s*=\s*\).*\$/\1$save_path/"
