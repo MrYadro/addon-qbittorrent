@@ -18,7 +18,7 @@ readonly conf=/config/qBittorrent/config/qBittorrent.conf
 
 # Ensure configuration exists
 if ! bashio::fs.directory_exists "$(dirname "${conf}")"; then
-    mkdir -p "$(dirname "${prefs}")" \
+    mkdir -p "$(dirname "${conf}")" \
         || bashio::exit.nok "Failed to create node-red configuration directory"
     cp /defaults/qBittorent.conf $conf
 fi
