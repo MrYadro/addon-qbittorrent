@@ -17,10 +17,10 @@
     ],
     "boot": "auto",
     "options": {
-        "save_path": "/share/Downloads/"
+        "legal_notice_accepted": "false"
     },
     "schema": {
-        "save_path": "str"
+        "legal_notice_accepted": "bool"
     },
     "ports": {
         "8080/tcp": 8080,
