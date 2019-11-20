@@ -8,4 +8,4 @@ It aims to be a good alternative to all other bittorrent clients out there. qBit
 
 [Click here for the full documentation][docs]
 
-[release]: {{ repo }}/tree/{{ version }}
+[docs]: https://github.com/MrYadro/addon-qbittorrent/blob/master/README.md
