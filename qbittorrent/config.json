@@ -33,6 +33,6 @@
     },
     "hassio_api": false,
     "homeassistant_api": false,
-    "host_network": false,
+    "host_network": false
   }
   
