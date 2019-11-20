@@ -3,6 +3,8 @@
     "version": "1.0.41999",
     "slug": "qbittorrent",
     "description": "A BitTorrent client in Qt",
+    "url": "https://github.com/MrYadro/addon-qbittorrent",
+    "webui": "http://[HOST]:[PORT:8080]",
     "arch": [
         "aarch64",
             "amd64",
@@ -10,7 +12,6 @@
             "i386"
     ],
     "startup": "services",
-    "url": "https://github.com/MrYadro/addon-qbittorrent",
     "map":[
         "share:rw",
         "config:rw"
@@ -25,6 +26,13 @@
     "ports": {
         "8080/tcp": 8080,
         "6881/tcp": 6881
-    }
+    },
+    "ports_description": {
+        "8080/tcp": "Web interface",
+        "6881/tcp": "qBittorrent port"
+    },
+    "hassio_api": false,
+    "homeassistant_api": false,
+    "host_network": false,
   }
   
