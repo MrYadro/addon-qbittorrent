@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: qBittorrent
+# Hass.io Add-on: qBittorrent
 
 ## About
 
@@ -30,7 +30,7 @@ Example add-on configuration:
 
 ```json
 {
-  "legal_notice_accepted": "false"
+  "legal_notice_accepted": false
 }
 ```
 
@@ -43,4 +43,4 @@ use the code or contribute to it.
 
 Thank you for being involved! :heart_eyes:
 
-[repository]: https://github.com/qbittorrent/qBittorrent
+[repository]: https://github.com/MrYadro/addon-qbittorrent

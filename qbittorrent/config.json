@@ -18,7 +18,7 @@
     ],
     "boot": "auto",
     "options": {
-        "legal_notice_accepted": "false"
+        "legal_notice_accepted": false
     },
     "schema": {
         "legal_notice_accepted": "bool"
