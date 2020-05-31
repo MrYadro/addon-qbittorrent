@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:4.0.0
+ARG BUILD_FROM=hassioaddons/ubuntu-base:5.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,7 +15,7 @@ RUN \
     && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable \
     && apt-get update \
     && apt-get install -y \
-       qbittorrent-nox=4.1.9.99~201911190849-6738-0b055d8~ubuntu18.04.1
+       qbittorrent-nox=4.2.5.99~202004250119-7015-2c65b79~ubuntu18.04.1
 
 # Copy root filesystem
 COPY rootfs /

@@ -1,6 +1,6 @@
 {
     "name": "qBittorrent",
-    "version": "1.0.41999",
+    "version": "1.0.42599",
     "slug": "qbittorrent",
     "description": "A BitTorrent client in Qt",
     "url": "https://github.com/MrYadro/addon-qbittorrent",
