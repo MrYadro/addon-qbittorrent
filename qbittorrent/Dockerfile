@@ -14,8 +14,7 @@ RUN \
     && apt-get update \
     && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable \
     && apt-get update \
-    && apt-get install -y \
-       qbittorrent-nox=4.2.5.99~202004250119-7015-2c65b79~ubuntu18.04.1
+    && apt-get install -y qbittorrent-nox
 
 # Copy root filesystem
 COPY rootfs /
