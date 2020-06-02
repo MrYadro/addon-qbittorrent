@@ -1,6 +1,6 @@
 {
     "name": "qBittorrent",
-    "version": "1.1.42599",
+    "version": "1.2.42599",
     "slug": "qbittorrent",
     "description": "A BitTorrent client in Qt",
     "url": "https://github.com/MrYadro/addon-qbittorrent",
@@ -14,7 +14,8 @@
     "startup": "services",
     "map":[
         "share:rw",
-        "config:rw"
+        "config:rw",
+        "ssl"
     ],
     "boot": "auto",
     "options": {
