@@ -15,6 +15,7 @@
     "map":[
         "media:rw",
         "config:rw",
+        "share:rw",
         "ssl"
     ],
     "boot": "auto",
